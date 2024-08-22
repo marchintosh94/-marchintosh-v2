@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #424242 #7b7b7b;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #7b7b7b;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #424242;
+  border-radius: 12px;
+  border: 1px solid #7b7b7b;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'monserrat', system-ui, sans-serif;
+  }
+  html {
+    @apply@apply scroll-smooth;
+  }
+  body {
+    @apply flex h-full flex-col bg-mb_light dark:bg-mb_dark text-mb_dark dark:text-mb_light fill-mb_dark dark:fill-mb_light;
+  }
+  h2,
+  h3,
+  h4,
+  p {
+    @apply text-zinc-600 dark:text-zinc-400;
+  }
+  b {
+    @apply text-zinc-700 dark:text-zinc-300;
+  }
+}
+
+@layer components {
+  #__next {
+    @apply h-full;
+  }
+
+  .mb-divide {
+    @apply divide-y divide-mb_dark/10 dark:divide-mb_light/10;
+  }
+
+  /* LOGO */
+  .logo-title {
+    @apply uppercase text-3xl font-extralight;
+  }
+  .logo-title span {
+    @apply font-medium;
+  }
+
+  .mb-tr-duration {
+    @apply duration-[400ms];
+  }
+
+  /* NAVBAR */
+  .menu-item {
+    @apply p-4 rounded-sm cursor-pointer transition mb-tr-duration ease-in-out hover:border-b hover:border-solid hover:border-mb_accent;
+  }
+  .menu-item.active {
+    @apply font-semibold border-b border-solid border-mb_accent;
+  }
+  .toolbar-social-logo {
+    @apply h-6 w-6 transition mb-tr-duration rounded-md ease-in-out  flex items-center justify-center dark:hover:bg-mb_light/[0.1] hover:bg-mb_dark/[0.1] hover:scale-110;
+  }
+
+  /* BUTTONS */
+  .mb-button {
+    @apply rounded-xl border;
+  }
+
+  /*LINKS*/
+  .mb-link {
+    @apply hover:px-4 py-2 cursor-pointer transition-all hover:text-mb_accent ease-in-out mb-tr-duration rounded-3xl hover:bg-mb_dark/5 dark:hover:bg-mb_light/5 p-1;
+  }
+  .mb-text-link {
+    @apply cursor-pointer transition-all hover:text-mb_accent ease-in-out mb-tr-duration hover:bg-mb_dark/5 dark:hover:bg-mb_light/5 font-semibold;
+  }
+
+  /*images*/
+  .mb-image-page {
+    @apply w-60 h-60 md:w-auto md:h-[428px] rounded-3xl bg-mb_light/[.02];
+  }
+
+  /*projects*/
+  .mb-project__box-image {
+    @apply flex items-center;
+  }
+  .mb-project__img {
+    @apply rounded-2xl
+    w-full h-[90%] aspect-[5/3]
+    shadow-mb_dark/60
+    dark:shadow-mb_light/40
+    shadow-md
+    transition-all 
+    duration-[.6s] 
+    ease-in-out 
+    scale-75  
+    hover:scale-100
+    hover:translate-y-2
+    brightness-75
+    hover:brightness-110
+    hover:shadow-2xl
+    cursor-pointer;
+  }
+  .mb-project__img-odd {
+    @apply skew-y-[5deg] skew-x-[5deg] hover:skew-x-2 hover:skew-y-2;
+  }
+  .mb-project__img-even {
+    @apply -skew-y-[5deg] -skew-x-[5deg] hover:-skew-x-2 hover:-skew-y-2;
+  }
+}
