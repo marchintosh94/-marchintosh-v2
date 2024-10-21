@@ -7,6 +7,10 @@ export const defaultMetadata: Metadata = {
   description:
     'Marco baratto portfolio website. Here you can find all my projects, experiences and discover curious things about me.',
   applicationName: mainTitle,
+  authors: {
+    name: 'Marco Baratto',
+    url: 'https://marcobaratto.dev/'
+  },
   twitter: {
     card: 'summary_large_image'
   },
@@ -92,7 +96,8 @@ export const defaultMetadata: Metadata = {
   creator: mainTitle,
   appleWebApp: {
     title: mainTitle,
-    statusBarStyle: 'black-translucent'
+    statusBarStyle: 'black-translucent',
+    capable: true
   },
   other: {
     'msapplication-TileColor': '#FFFFFF',
@@ -100,6 +105,7 @@ export const defaultMetadata: Metadata = {
     'msapplication-square70x70logo': '/favicon/mstile-70x70.png',
     'msapplication-square150x150logo': '/favicon/mstile-150x150.png',
     'msapplication-wide310x150logo': '/favicon/mstile-310x150.png',
-    'msapplication-square310x310logo': '/favicon/mstile-310x310.png'
+    'msapplication-square310x310logo': '/favicon/mstile-310x310.png',
+    'mobile-web-app-capable': 'yes'
   }
 }

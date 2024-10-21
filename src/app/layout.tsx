@@ -1,6 +1,6 @@
 import '@/theme/globals.css'
 import { defaultMetadata } from '@/metadata'
-import { montserratFont } from '@/fonts'
+import Layout from '@/components/layout/Layout'
 
 export const metadata = defaultMetadata
 
@@ -9,9 +9,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <html lang="en" className={`${montserratFont.variable}`}>
-      <body>{children}</body>
-    </html>
-  )
+  return <Layout className="space-y60">{children}</Layout>
 }
