@@ -136,4 +136,8 @@
   .mb-project__img-even {
     @apply -skew-y-[5deg] -skew-x-[5deg] hover:-skew-x-2 hover:-skew-y-2;
   }
+
+  .mb-project-links__container {
+    @apply text-zinc-600 dark:text-zinc-400 space-y-2 text-base text-justify;
+  }
 }

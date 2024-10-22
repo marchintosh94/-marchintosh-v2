@@ -1,6 +1,6 @@
 import '@/theme/globals.css'
 import { defaultMetadata } from '@/metadata'
-import Layout from '@/components/layout/Layout'
+import BaseLayout from '@/components/layout/BaseLayout'
 
 export const metadata = defaultMetadata
 
@@ -9,5 +9,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <Layout className="space-y60">{children}</Layout>
+  return <BaseLayout>{children}</BaseLayout>
 }
