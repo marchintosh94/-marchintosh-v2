@@ -1,16 +1,8 @@
-import { unstable_cache } from 'next/cache'
-import { airtable } from './airtable'
-import { API_TAGS } from '@/types/api'
+import { airtableCache } from './airtable'
+import { API_TAGS } from '@/types'
 
-export const getExperiences = unstable_cache(
-  async () => {
-    return await airtable('Experiences')
-      .select({ sort: [{ field: 'order' }] })
-      .all()
-  },
-  [API_TAGS.experiences],
-  {
-    tags: [API_TAGS.experiences],
-    revalidate: process.env.NODE_ENV === 'development' ? 1 : false
-  }
-)
+export const getExperiences = airtableCache({
+  table: 'Experiences',
+  tag: API_TAGS.experiences,
+  queryParams: { sort: [{ field: 'order' }] }
+})

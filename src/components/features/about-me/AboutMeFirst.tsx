@@ -1,9 +1,9 @@
-import { Pages } from 'lib/utils'
-import Img from './common/Img'
-import LinkButton from './common/LinkButton'
-import Paragraph from './common/typography/Paragraph'
-import Title from './common/typography/Title'
-import SocialLinks from './SocialLinks'
+import Img from '../../common/Img'
+import LinkButton from '../../common/LinkButton'
+import Paragraph from '../../common/typography/Paragraph'
+import Title from '../../common/typography/Title'
+import SocialLinks from '../../common/SocialLinks'
+import { AvailablePages } from '@/utils/app_pages'
 
 const AboutMeFirst: React.FC = () => {
   const yearOfExperience = new Date().getFullYear() - 2017
@@ -22,7 +22,7 @@ const AboutMeFirst: React.FC = () => {
           Hello,&nbsp;<span className="lowercase">nice to meet you</span>!
         </Title>
         <Paragraph className="mt-10">
-          My name is Marco and I was born in 1994 in Florence. I'm software
+          My name is Marco and I was born in 1994 in Florence. I&apos;m software
           developer focused on <b>frontend development</b> with{' '}
           {yearOfExperience} years of experience in building scalable products.
           As well as participating in many tech programs where I have been
@@ -35,12 +35,12 @@ const AboutMeFirst: React.FC = () => {
           >
             Fabio Biondi
           </a>
-          's platform and Udemy, about &nbsp;<b>Angular</b>, <b>React</b>,{' '}
+          &apos;s platform and Udemy, about &nbsp;<b>Angular</b>, <b>React</b>,{' '}
           <b>State Management</b>, <b>Vue</b>, <b>JavaScript</b> and{' '}
           <b>Typescript</b>.
         </Paragraph>
-        <LinkButton href={Pages.Projects.path}>
-          Let's go to my projects
+        <LinkButton href={AvailablePages.Projects.path}>
+          Let&apos;s go to my projects
         </LinkButton>
       </div>
     </section>

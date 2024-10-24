@@ -1,8 +1,8 @@
 'use client'
 
 import cn from '@/utils/cn'
-import Img from './common/Img'
-import { ProjectUI } from '@/types/project'
+import Img from '../../common/Img'
+import { ProjectUI } from '@/types'
 
 interface ProjectFigureProps {
   project: ProjectUI

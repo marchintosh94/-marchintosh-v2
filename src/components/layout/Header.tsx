@@ -9,7 +9,7 @@ import {
 import BarsIcon from '@/components/icons/BarsIcon'
 import XmarkIcon from '@/components/icons/XmarkIcon'
 import NavItem from '@/components/NavItem'
-import SocialLinks from '@/components/SocialLinks'
+import SocialLinks from '@/components/common/SocialLinks'
 import { faLightbulb, faLightbulbOn } from '@fortawesome/pro-light-svg-icons'
 import { useRouter } from 'next/navigation'
 import Img from '@/components/common/Img'

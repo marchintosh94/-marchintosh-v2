@@ -4,7 +4,8 @@ import Img from '@/components/common/Img'
 import Paragraph from '@/components/common/typography/Paragraph'
 import Title2 from '@/components/common/typography/Title2'
 import Title3 from '@/components/common/typography/Title3'
-import ProjectFigure from '@/components/ProjectFigure'
+import ProjectFigure from '@/components/features/project/ProjectFigure'
+import ProjectLinksSection from '@/components/features/project/ProjectLinksSection'
 import SkillsBox from '@/components/SkillsBox'
 
 export default async function Projects() {
@@ -36,6 +37,7 @@ export default async function Projects() {
                 </Paragraph>
               )}
               <SkillsBox skills={project.skills} />
+              <ProjectLinksSection project={project} />
             </section>
           </article>
         ))}

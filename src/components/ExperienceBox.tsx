@@ -1,11 +1,10 @@
 import clsx from 'clsx'
-import { ExperienceUI } from 'models/types'
 import ExtLinkButton from './common/ExtLinkButton'
 import Img from './common/Img'
-import LinkButton from './common/LinkButton'
 import Paragraph from './common/typography/Paragraph'
 import Title3 from './common/typography/Title3'
 import SkillsBox from './SkillsBox'
+import { ExperienceUI } from '@/types'
 
 interface ExperienceBoxProps extends React.HtmlHTMLAttributes<HTMLElement> {
   experience?: ExperienceUI

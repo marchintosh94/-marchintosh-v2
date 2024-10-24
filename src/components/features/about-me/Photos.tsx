@@ -1,4 +1,4 @@
-import Img from './common/Img'
+import Img from '../../common/Img'
 import clsx from 'clsx'
 
 const Photos = () => {

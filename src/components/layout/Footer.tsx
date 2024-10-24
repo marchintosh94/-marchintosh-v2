@@ -1,5 +1,5 @@
 import NavItem from '@/components/NavItem'
-import SocialLinks from '@/components/SocialLinks'
+import SocialLinks from '@/components/common/SocialLinks'
 import { AppPage } from '@/types'
 
 const Footer: React.FC<{ pages: AppPage[] }> = ({ pages }) => {

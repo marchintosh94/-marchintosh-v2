@@ -5,8 +5,8 @@ import {
   faQuoteLeft,
   faQuoteRight
 } from '@fortawesome/pro-light-svg-icons'
-import Paragraph from './common/typography/Paragraph'
-import Subtitle from './common/typography/Subtitle'
+import Paragraph from '../../common/typography/Paragraph'
+import Subtitle from '../../common/typography/Subtitle'
 
 const AboutMeThings: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = (
   props
@@ -33,9 +33,9 @@ const AboutMeThings: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = (
               <sup>
                 <FontAwesomeIcon className="h-2 w-2" icon={faQuoteLeft} />
               </sup>
-              &nbsp; I'm the type of person that if you ask me a question and I
-              don't know the answer, I'm gonna tell you that I don't know, but
-              you can bet I will find a solution.&nbsp;
+              &nbsp; I&apos;m the type of person that if you ask me a question
+              and I don&apos;t know the answer, I&apos;m gonna tell you that I
+              don&apos;t know, but you can bet I will find a solution.&nbsp;
               <sup>
                 <FontAwesomeIcon className="h-2 w-2" icon={faQuoteRight} />
               </sup>
@@ -51,7 +51,7 @@ const AboutMeThings: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = (
             <Subtitle className="text-sm font-semibold">Fun Fact:</Subtitle>
 
             <Paragraph className="text-sm">
-              I'm used to have a walk and talk with myself when I have to
+              I&apos;m used to have a walk and talk with myself when I have to
               resolve a problem
             </Paragraph>
           </div>

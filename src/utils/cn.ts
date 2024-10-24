@@ -42,11 +42,6 @@ const cn = (...args: CNClasses[]): string => {
       classes += `${currentClass} `
       continue
     }
-    try {
-      console.error(`cn: Invalid arguments ${JSON.stringify(args[i])}`)
-    } catch {
-      console.error(`cn: Invalid arguments`)
-    }
   }
   return classes.trim()
 }

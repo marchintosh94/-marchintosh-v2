@@ -1,4 +1,4 @@
-import { ProjectUI } from '@/types/project'
+import { ProjectUI } from '@/types'
 import { faNpm, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faGlobe, faGraduationCap } from '@fortawesome/pro-light-svg-icons'
 import ProjectLink from './ProjectLink'

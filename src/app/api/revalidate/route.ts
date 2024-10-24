@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest } from 'next/server'
 import { revalidateTag } from 'next/cache'
-import { API_TAGS } from '@/types/api'
+import { API_TAGS } from '@/types'
 
 export async function POST(request: NextRequest) {
   const tagsArray = new Set<string>(Object.values(API_TAGS))

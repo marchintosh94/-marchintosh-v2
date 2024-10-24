@@ -1,7 +1,6 @@
 import clsx from 'clsx'
-import { SkillUI } from 'models/types'
-import Image from 'next/image'
-import Badge from './common/Badge'
+import { SkillUI } from '@/types'
+import Skill from './Skill'
 
 interface SkillsBoxProps extends React.HtmlHTMLAttributes<HTMLUListElement> {
   skills: SkillUI[]
@@ -19,15 +18,14 @@ const SkillsBox: React.FC<SkillsBoxProps> = ({
     className={clsx('grid grid-flow-col auto-cols-max gap-x-2', className)}
   >
     {skills.map((s) => (
-      <Badge
-        title={s.title}
-        aria-label={s.title}
-        className={`items-center justify-center bg-mb_dark/5 dark:bg-mb_light/30 duration-500 cursor-pointer hover:scale-110 ${badgeClass}`}
-        onClick={() => window.open(s.url)}
+      <Skill
         key={s.id}
-      >
-        <Image alt={s.title} src={s.logo[0].url} width={24} height={24} />
-      </Badge>
+        id={s.id}
+        title={s.title}
+        url={s.url}
+        logo={s.logo}
+        className={badgeClass}
+      />
     ))}
   </ul>
 )
