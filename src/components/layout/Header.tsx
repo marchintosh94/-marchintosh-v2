@@ -1,6 +1,4 @@
 'use client'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Disclosure,
   DisclosureButton,
@@ -10,37 +8,15 @@ import BarsIcon from '@/components/icons/BarsIcon'
 import XmarkIcon from '@/components/icons/XmarkIcon'
 import NavItem from '@/components/NavItem'
 import SocialLinks from '@/components/common/SocialLinks'
-import { faLightbulb, faLightbulbOn } from '@fortawesome/pro-light-svg-icons'
-import { useRouter } from 'next/navigation'
 import Img from '@/components/common/Img'
 import { AppPage } from '@/types'
+import Logo from '../Logo'
+import ThemeButton from '../ThemeButton'
 
 interface HeaderProps {
   pages: AppPage[]
 }
 const Header = ({ pages }: HeaderProps) => {
-  const { push } = useRouter()
-
-  function disableTransitionsTemporarily() {
-    document.documentElement.classList.add('[&_*]:!transition-none')
-    window.setTimeout(() => {
-      document.documentElement.classList.remove('[&_*]:!transition-none')
-    }, 0)
-  }
-
-  function toggleMode() {
-    disableTransitionsTemporarily()
-
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle('dark')
-
-    if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
-    } else {
-      window.localStorage.isDarkMode = isDarkMode
-    }
-  }
   return (
     <Disclosure as="nav">
       {({ open }) => (
@@ -49,34 +25,10 @@ const Header = ({ pages }: HeaderProps) => {
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0 ">
-                  <div className="cursor-pointer" onClick={() => push('/')}>
-                    <img
-                      src={'/images/logo/mb_light.svg'}
-                      alt="Marco Baratto Logo"
-                      className="w-auto block h-16 rounded-ful dark:hidden"
-                    />
-                    <img
-                      src={'/images/logo/mb_dark.svg'}
-                      alt="Marco Baratto Logo"
-                      className="w-auto dark:inline-block h-16 rounded-ful hidden"
-                    />
-                  </div>
+                  <Logo />
                 </div>
               </div>
-
-              <div
-                onClick={toggleMode}
-                className="flex items-center cursor-pointer rotate-180"
-              >
-                <FontAwesomeIcon
-                  className="!h-10 w-10 !hidden dark:!block"
-                  icon={faLightbulb}
-                />
-                <FontAwesomeIcon
-                  className="!h-10 w-10 dark:!hidden !block text-mb_accent"
-                  icon={faLightbulbOn}
-                />
-              </div>
+              <ThemeButton />
 
               <div className="hidden sm:ml-6 sm:flex space-x-10">
                 <div className="flex items-center space-x-2">

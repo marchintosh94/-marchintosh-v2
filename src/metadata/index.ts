@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 const mainTitle = 'Marco Baratto'
 
 export const defaultMetadata: Metadata = {
+  metadataBase: new URL(process.env.FE_BASE_URL),
   title: mainTitle,
   description:
     'Marco baratto portfolio website. Here you can find all my projects, experiences and discover curious things about me.',
