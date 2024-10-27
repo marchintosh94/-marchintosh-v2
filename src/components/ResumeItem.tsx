@@ -7,7 +7,9 @@ const ResumeItem: React.FC<{ role: ExperienceUI }> = ({ role }) => (
       {role.logo.map((l) => (
         <Img
           key={l.url}
-          className="h-8 w-8 rounded-full"
+          width={32}
+          height={32}
+          className="h-8 w-8 rounded-full object-contain"
           alt={role.company}
           src={l.url}
         />

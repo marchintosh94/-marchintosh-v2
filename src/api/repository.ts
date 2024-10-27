@@ -10,8 +10,8 @@ import { getContacts } from './contacts'
 
 export const getMappedExperiences = async () => {
   const experiences = await getExperiences()
-  const skillIds = experiences.map(
-    (experience) => experience.fields.skills
+  const skillIds = experiences.flatMap(
+    (experience) => experience.fields.skills as string[]
   ) as string[]
   const skills = await getSkillsWithOptions()
   const filteredSkills = getFilteredSkillsByIds(skills)(skillIds)
@@ -32,7 +32,9 @@ export const getMappedExperiences = async () => {
 }
 export const getMappedProjects = async () => {
   const projects = await getProjects()
-  const skillIds = projects.map((project) => project.fields.skills) as string[]
+  const skillIds = projects.flatMap(
+    (project) => project.fields.skills as string[]
+  ) as string[]
   const skills = await getSkillsWithOptions()
   const filteredSkills = getFilteredSkillsByIds(skills)(skillIds)
   const skillsUI = mapSkillsToUI(filteredSkills)

@@ -34,8 +34,10 @@ const ExperienceBox: React.FC<ExperienceBoxProps> = ({
             href={experience.companyUrl}
           >
             <Img
+              width={20}
+              height={20}
               alt={experience.company}
-              className="rounded-full h-5 w-5 mr-2"
+              className="rounded-full h-5 w-5 mr-2 object-contain"
               src={experience.logo[0].url}
             />
             {experience.company}

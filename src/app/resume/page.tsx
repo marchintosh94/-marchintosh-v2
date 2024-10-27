@@ -7,6 +7,7 @@ import Title3 from '@/components/common/typography/Title3'
 import DownloadResumeButton from '@/components/features/resume/DownloadResumeButton'
 import ResumeItem from '@/components/ResumeItem'
 import Skill from '@/components/Skill'
+import cn from '@/utils/cn'
 import Image from 'next/image'
 
 export default async function Resume() {
@@ -133,14 +134,16 @@ export default async function Resume() {
           </section>
           <section className="p-4 dark:bg-black/20 rounded-2xl space-y-6">
             <Title3 className="sm:text-lg">Skills:</Title3>
-            <div>
-              {skills.map((s) => (
+            <div className="space-x-2 space-y-2">
+              {skills.map((s, index) => (
                 <Skill
                   key={s.id}
                   id={s.id}
                   title={s.title}
                   url={s.url}
                   logo={s.logo}
+                  className={cn({ 'ml-2': index === 0 })}
+                  showTitle
                 />
               ))}
             </div>

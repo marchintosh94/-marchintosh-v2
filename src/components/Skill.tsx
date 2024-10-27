@@ -11,15 +11,16 @@ interface SkillProps {
   url: string
   id: string
   className?: string
+  showTitle?: boolean
 }
 
-const Skill = ({ id, logo, title, url, className }: SkillProps) => {
+const Skill = ({ id, logo, title, url, className, showTitle }: SkillProps) => {
   return (
     <Badge
       title={title}
       aria-label={title}
       className={cn(
-        `flex flex-row justify-center my-2 mr-3 bg-mb_dark/5 dark:bg-mb_light/30 duration-500 cursor-pointer hover:scale-110`,
+        `flex flex-row justify-center bg-mb_dark/5 dark:bg-mb_light/30 duration-500 cursor-pointer hover:scale-110 space-x-1 items-center`,
         className || ''
       )}
       onClick={() => window.open(url)}
@@ -32,7 +33,7 @@ const Skill = ({ id, logo, title, url, className }: SkillProps) => {
         height={20}
         className="h-5 w-5"
       />
-      &nbsp;<span className="text-xs">{title}</span>
+      {showTitle && <span className="text-xs">{title}</span>}
     </Badge>
   )
 }

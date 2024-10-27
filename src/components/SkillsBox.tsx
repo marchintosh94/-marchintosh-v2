@@ -13,19 +13,17 @@ const SkillsBox: React.FC<SkillsBoxProps> = ({
   badgeClass,
   ...props
 }) => (
-  <ul
-    role={'list'}
-    className={clsx('grid grid-flow-col auto-cols-max gap-x-2', className)}
-  >
+  <ul role={'list'} className={clsx('flex flex-wrap gap-2', className)}>
     {skills.map((s) => (
-      <Skill
-        key={s.id}
-        id={s.id}
-        title={s.title}
-        url={s.url}
-        logo={s.logo}
-        className={badgeClass}
-      />
+      <li key={s.id}>
+        <Skill
+          id={s.id}
+          title={s.title}
+          url={s.url}
+          logo={s.logo}
+          className={badgeClass}
+        />
+      </li>
     ))}
   </ul>
 )

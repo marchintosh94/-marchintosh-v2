@@ -108,8 +108,10 @@ export default async function PdfPage() {
                 <>
                   <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                     {e.logo.map((l) => (
-                      <img
+                      <Image
                         key={l.url}
+                        width={36}
+                        height={36}
                         className="h-9 w-9 rounded-full object-cover"
                         alt={e.company}
                         src={l.url}
@@ -165,7 +167,13 @@ export default async function PdfPage() {
                   className={`flex flex-row my-2 mr-3 items-center bg-mb_dark/5 dark:bg-mb_light/30 duration-500 cursor-pointer hover:scale-110 `}
                   key={s.id}
                 >
-                  <img alt={s.title} src={s.logo[0].url} className="h-5 w-5" />
+                  <Image
+                    width={20}
+                    height={20}
+                    alt={s.title}
+                    src={s.logo[0].url}
+                    className="h-5 w-5"
+                  />
                   &nbsp;<span className="text-xs">{s.title}</span>
                 </Badge>
               ))}

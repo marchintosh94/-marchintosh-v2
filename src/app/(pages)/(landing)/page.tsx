@@ -42,11 +42,14 @@ export default async function Home() {
             className="sm:hidden flex-col justify-center space-y-2"
             iconClass="w-8 !h-8"
           />
-          <Img
-            className="mb-image-page"
-            alt="marco baratto"
-            src="/photos/marcobaratto.png"
-          />
+          <div className="relative mb-image-page overflow-hidden">
+            <Img
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              alt="marco baratto"
+              src="/photos/marcobaratto.png"
+            />
+          </div>
         </div>
       </section>
       <section className="grid grid-cols-4 xl:grid-cols-3 p-2  dark:bg-black rounded-2xl">

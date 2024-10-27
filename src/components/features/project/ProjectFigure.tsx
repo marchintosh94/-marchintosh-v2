@@ -20,16 +20,24 @@ const ProjectFigure = ({ project, index }: ProjectFigureProps) => {
         'sm:justify-start': index % 2 == 1
       })}
     >
-      <Img
-        alt={project.title}
-        onClick={() => navigateTo(project.website)}
-        src={project.preview[0].url}
-        className={cn({
-          'mb-project__img ': true,
-          'sm:order-2 mb-project__img-odd': index % 2 == 1,
-          'mb-project__img-even': index % 2 == 0
-        })}
-      />
+      <div
+        className={cn(
+          {
+            'mb-project__img ': true,
+            'sm:order-2 mb-project__img-odd': index % 2 == 1,
+            'mb-project__img-even': index % 2 == 0
+          },
+          'overflow-hidden relative'
+        )}
+      >
+        <Img
+          fill
+          sizes="100vw"
+          alt={project.title}
+          onClick={() => navigateTo(project.website)}
+          src={project.preview[0].url}
+        />
+      </div>
     </figure>
   )
 }

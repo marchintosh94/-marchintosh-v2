@@ -5,11 +5,15 @@ export default function NotFound() {
   return (
     <>
       <main className="min-h-full">
-        <Img
-          alt="Not Found"
-          src={'/images/404.avif'}
-          className="h-screen w-screen"
-        />
+        <div className="h-screen w-screen relative">
+          <Img
+            fill
+            sizes="100vw"
+            alt="Not Found"
+            src={'/images/404.avif'}
+            className="object-cover"
+          />
+        </div>
         <div className="fixed z-10 right-0 left-0 top-0 mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8 lg:py-44">
           <p className="text-base font-semibold text-black text-opacity-50">
             404

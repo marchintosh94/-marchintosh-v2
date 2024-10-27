@@ -11,11 +11,15 @@ const AboutMeFirst: React.FC = () => {
     <section className="flex flex-col md:flex-row items-center md:space-x-8 space-y-4">
       <SocialLinks className="sm:hidden space-x-4 mb-4" iconClass="w-8 !h-8" />
       <div className="flex flex-col items-center h-full w-full md:block md:items-center md:basis-2/5 space-y-4">
-        <Img
-          className="w-80 h-80 mb-image-page md:h-[400px] md:w-auto aspect-square rotate-3 rounded-2xl object-cover saturate-200"
-          alt="marco baratto"
-          src="/photos/marcobaratto_about.png"
-        />
+        <div className="relative overflow-hidden w-80 h-80 mb-image-page md:h-[400px] md:w-auto aspect-square rotate-3 rounded-2xl object-cover saturate-200">
+          <Img
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className=""
+            alt="marco baratto"
+            src="/photos/marcobaratto_about.png"
+          />
+        </div>
       </div>
       <div className="space-y-6 md:basis-3/5">
         <Title>
