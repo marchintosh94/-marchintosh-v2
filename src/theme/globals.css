@@ -40,7 +40,7 @@
 
 @layer base {
   html {
-    font-family: 'monserrat', system-ui, sans-serif;
+    @apply font-montserrat;
   }
   html {
     @apply@apply scroll-smooth;
@@ -111,33 +111,69 @@
 
   /*projects*/
   .mb-project__box-image {
-    @apply flex items-center;
+    @apply flex items-center mb-2 sm:mb-0;
   }
   .mb-project__img {
     @apply rounded-2xl
     w-full h-[90%] aspect-[5/3]
     shadow-mb_dark/60
     dark:shadow-mb_light/40
-    shadow-md
     transition-all 
     duration-[.6s] 
     ease-in-out 
-    scale-75  
-    hover:scale-100
-    hover:translate-y-2
-    brightness-75
-    hover:brightness-110
-    hover:shadow-2xl
-    cursor-pointer;
+    cursor-pointer
+    /*desktop*/
+    sm:hover:scale-100
+    sm:hover:translate-y-2
+    sm:hover:brightness-110
+    sm:hover:shadow-2xl
+    sm:brightness-75
+    sm:shadow-md
+    sm:scale-75  
+    /*mobile*/
+    scale-100
+    translate-y-2
+    brightness-110
+    shadow-2xl;
   }
   .mb-project__img-odd {
-    @apply skew-y-[5deg] skew-x-[5deg] hover:skew-x-2 hover:skew-y-2;
+    /*desktop*/
+    @apply sm:skew-y-[5deg] sm:skew-x-[5deg] sm:hover:skew-x-2 sm:hover:skew-y-2;
+    /*mobile*/
+    @apply skew-x-2 skew-y-2;
   }
   .mb-project__img-even {
-    @apply -skew-y-[5deg] -skew-x-[5deg] hover:-skew-x-2 hover:-skew-y-2;
+    /*desktop*/
+    @apply sm:-skew-y-[5deg] sm:-skew-x-[5deg] sm:hover:-skew-x-2 sm:hover:-skew-y-2;
+    /*mobile*/
+    @apply -skew-x-2 -skew-y-2;
   }
 
   .mb-project-links__container {
     @apply text-zinc-600 dark:text-zinc-400 space-y-2 text-base text-justify;
+  }
+
+  /*Resume item*/
+  .mb-resume-item {
+    @apply relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md dark:ring-0 dark:border 
+    shadow-zinc-800/5 ring-1 
+    ring-zinc-900/5 
+    dark:border-zinc-700/50 
+    dark:bg-zinc-800;
+  }
+  .mb-resume-item__title {
+    @apply text-base font-medium text-zinc-900 dark:text-zinc-100;
+  }
+  .mb-resume-item__subtitle {
+    @apply text-xs text-zinc-700 dark:text-zinc-300/90;
+  }
+  .mb-resume-item__note {
+    @apply text-xs text-zinc-700 dark:text-zinc-300/90;
+  }
+  .mb-resume-item_li {
+    @apply flex p-3 gap-4 cursor-pointer dark:hover:bg-[#38383a] hover:bg-mb_dark/5 rounded-2xl;
+  }
+  .mb-resume-item_li-active {
+    @apply dark:bg-[#38383a] bg-mb_dark/5;
   }
 }

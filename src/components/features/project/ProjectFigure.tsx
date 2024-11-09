@@ -32,7 +32,7 @@ const ProjectFigure = ({ project, index }: ProjectFigureProps) => {
       >
         <Img
           fill
-          sizes="100vw"
+          sizes="(min-width: 768px)50vw,100vw"
           alt={project.title}
           onClick={() => navigateTo(project.website)}
           src={project.preview[0].url}

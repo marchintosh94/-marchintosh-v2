@@ -33,9 +33,8 @@ const ResumeBox: React.FC<ResumeBoxProps> = ({
             onClick={() => onChangeActive(role)}
             key={roleIndex}
             className={clsx({
-              'flex p-3 gap-4 cursor-pointer hover:bg-[#38383a] rounded-2xl':
-                true,
-              'bg-[#38383a]': active === role.id
+              'mb-resume-item_li': true,
+              'mb-resume-item_li-active': active === role.id
             })}
           >
             <ResumeItem role={role} />

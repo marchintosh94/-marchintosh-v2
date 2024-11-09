@@ -57,21 +57,22 @@ const Header = ({ pages }: HeaderProps) => {
           <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {pages.map((p) => (
-                <DisclosureButton
+                <div
                   key={p.title}
-                  as="a"
                   className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   <NavItem href={p.path}>{p.title}</NavItem>
-                </DisclosureButton>
+                </div>
               ))}
             </div>
             <div className="border-t border-gray-700 pt-4 pb-3 px-5">
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
                   <Img
+                    width={44}
+                    height={44}
                     src="/photos/marcobaratto.png"
-                    className=" h-11 w-11 rounded-full"
+                    className="h-11 w-11 rounded-full"
                     alt="Marco Baratto"
                   />
                 </div>

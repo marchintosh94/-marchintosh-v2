@@ -17,7 +17,7 @@ export default async function Projects() {
         Projects&nbsp;
         <span className="text-mb_accent text-sm">@marchintosh94</span>
       </Title2>
-      <div className="space-y-40">
+      <div className="space-y-20 sm:space-y-40">
         {projects.map((project, i) => (
           <article
             key={project.id}
