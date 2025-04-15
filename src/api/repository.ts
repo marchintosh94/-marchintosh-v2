@@ -27,7 +27,9 @@ export const getMappedExperiences = async () => {
     endYear: e.fields.end
       ? `${new Date(e.fields.end as string).getMonth()}/${new Date(e.fields.end as string).getFullYear()}`
       : 'Present',
-    skills: skillsUI
+    skills: skillsUI.filter(
+      (skill) => (e.fields.skills as string[]).indexOf(skill.id) !== -1
+    )
   })) as ExperienceUI[]
 }
 export const getMappedProjects = async () => {
@@ -45,7 +47,9 @@ export const getMappedProjects = async () => {
     preview: (p.fields.preview as Attachment[]).map((elem) => ({
       url: `/images/preview/${elem.filename}`
     })),
-    skills: skillsUI
+    skills: skillsUI.filter(
+      (skill) => (p.fields.skills as string[]).indexOf(skill.id) !== -1
+    )
   })) as ProjectUI[]
 }
 
@@ -59,11 +63,15 @@ export const getResumePageData = async () => {
         { field: 'groupOrder', direction: 'asc' },
         { field: 'fieldOrder', direction: 'asc' }
       ],
-      filterByFormula:
-        'AND(NOT({type} = "database"), NOT({type} = "tools"), NOT({title} = "Yii"), NOT({title} = "Html"), NOT({title} = "Css"))'
+      filterByFormula: `AND(
+          NOT({type} = 'database'), 
+          NOT({type} = 'tools'), 
+          NOT({title} = 'Yii'), 
+          NOT({title} = 'Html'), 
+          NOT({title} = 'Css')
+        )`
     })
   ])
-
   const skillsUI = mapSkillsToUI(skills)
 
   return {
