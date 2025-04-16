@@ -1,11 +1,18 @@
 import { NextResponse } from 'next/server'
 import puppeteer from 'puppeteer'
+import chromium from '@sparticuz/chromium'
 
 export async function POST() {
   try {
+    const isDev = process.env.NODE_ENV === 'development'
     const browser = await puppeteer.launch({
-      headless: true,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: isDev
+        ? process.env.CHROME_PATH
+        : await chromium.executablePath(),
+      headless: chromium.headless,
       args: [
+        ...chromium.args,
         '--hide-scrollbars',
         '--disable-web-security',
         '--no-sandbox',

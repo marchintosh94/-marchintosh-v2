@@ -6,5 +6,7 @@ namespace NodeJS {
     FONTAWESOME_NPM_AUTH_TOKEN: string
     MY_SECRET_TOKEN: string
     FE_BASE_URL: string
+    NODE_ENV: 'development' | 'production'
+    CHROME_PATH: string
   }
 }

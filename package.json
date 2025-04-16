@@ -18,9 +18,10 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@headlessui/react": "^2.1.2",
     "@next/env": "^15.0.0",
+    "@sparticuz/chromium": "^133.0.0",
     "airtable": "^0.12.2",
     "next": "^15.0.1",
-    "puppeteer": "^23.6.0",
+    "puppeteer": "^24.6.1",
     "react": "^18",
     "react-dom": "^18"
   },
